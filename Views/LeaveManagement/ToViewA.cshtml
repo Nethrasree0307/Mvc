@@ -1,0 +1,108 @@
+@inject IHttpContextAccessor context;
+@model IEnumerable<LMS.Models.Leave>
+  @{
+    Layout = "LayoutA";
+} 
+ 
+    
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                
+                    <tr style="font-weight: bolder;">
+                      <td>EmployeeID</td>
+                        <td>Name</td>
+                        <td>Leave Type</td>
+                        <td>Start Date</td>
+                        <td>End Date</td>
+                        <td>Description</td>
+                        <td>Status</td>
+                      
+                   </tr>
+               
+                <tbody>
+                 
+                    @foreach(var item in Model)
+                    { 
+                     
+                        <tr>
+                            <td>@Html.DisplayFor(ModelItem => item.EmployeeID) </td> 
+                             <td>@Html.DisplayFor(ModelItem =>item.Name)</td> 
+                             <td>@Html.DisplayFor(ModelItem => item.LeaveType)</td> 
+                              <td>@Html.DisplayFor(ModelItem =>item.StartDate)</td> 
+                               <td>@Html.DisplayFor(ModelItem =>item.EndDate)</td> 
+                                <td>@Html.DisplayFor(ModelItem =>item.Description)</td> 
+                                 <td>@Html.DisplayFor(ModelItem =>item.AcceptOrReject)</td>
+
+                                <td>
+                                  @* @Html.ActionLink("Approve","Approve",new {id = item.EmployeeID})| *@
+                                  <a style="color: green;" asp-action="Approve" asp-controller="LeaveManagement" asp-route-id="@item.EmployeeID"><i style="font-size:18px;color: rgb(0, 128, 2);" class="fa">&#xf046;</i></a>
+                                  @* <a  style="color: rgb(128, 17, 0);" asp-action="ToViewA" asp-controller="LeaveManagement" asp-route-id="@item.EmployeeID" >Delete</a>  *@
+                                  <a  asp-action="Delete" asp-controller="LeaveManagement" asp-route-id="@item.EmployeeID"><i style="font-size:18px;color: rgb(128, 17, 0);" class="glyphicon">&#xe020;</i></a>
+                                  @* @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID }, new { @class = "glyphicon glyphicon-trash" }) *@
+                                 </td> 
+                                 
+                                 
+                        </tr>
+                    
+                    }
+                </tbody>
+            </table>
+            <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+    
+
+
+@* <h1>Login successful Employee</h1>
+    <h2>  <a class="navbar-brand" asp-area="" asp-controller="LeaveApply" asp-action="leaveapplyform">Apply Leave</a> </h2> *@
+
+ <style>
+html, body {
+    @* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); *@
+
+       background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+} 
+
+    .login-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  
+}
+
+.login-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+header{
+  color: rgb(245, 242, 242);
+background-color: rgb(11, 11, 11);
+
+}
+.btn.btn-dark.dropdown-toggle{
+margin-right: 30px;
+padding-top : 12px;
+}
+.btn.btn-dark.dropdown-toggle:hover{
+  color:rgb(245, 242, 242) ;
+}
+
+ </style> 

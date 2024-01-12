@@ -1,0 +1,52 @@
+@model List<LMS.Models.Employee>
+@{
+    Layout = "LayoutA";
+} 
+   
+    @ViewBag.ErrorMessage
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr style="font-weight: bolder;">
+                        <td>EmployeeID</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>EmailID</td>
+                        <td>Address</td>
+                        <td>Password</td>
+                        <td>Contact</td>
+                   </tr>
+                </thead>
+                <tbody>
+                  @if(Model != null) 
+                    {
+                    foreach(var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(ModelItem => item.EmployeeID)</td> 
+                             <td>@Html.DisplayFor(ModelItem => item.Name)</td> 
+                             <td>@Html.DisplayFor(ModelItem => item.Age)</td> 
+                              <td>@Html.DisplayFor(ModelItem => item.EmailId)</td> 
+                               <td>@Html.DisplayFor(ModelItem => item.Address)</td> 
+                                <td>@Html.DisplayFor(ModelItem => item.password)</td> 
+                                 <td>@Html.DisplayFor(ModelItem => item.contact)</td> 
+                                 <td>
+                                  <a  asp-action="Edit" asp-controller="EmployeeManagement" asp-route-id="@item.EmployeeID"><i style="font-size:18px;color: rgb(32, 173, 4);" class="fa">&#xf044;</i></a>
+                                  <a  asp-action="Delete" asp-controller="EmployeeManagement" asp-route-id="@item.EmployeeID"><i style="font-size:18px;color: rgb(128, 17, 0);" class="glyphicon">&#xe020;</i></a>
+                                 </td>
+                        </tr>
+
+                    }
+                    }
+                </tbody>
+            </table>
+             <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+ 
+

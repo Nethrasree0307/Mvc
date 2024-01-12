@@ -1,0 +1,118 @@
+@inject IHttpContextAccessor context;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <title>@ViewData["Title"]Leave Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LMS.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav  class="navbar navbar-expand-sm navbar-toggleable-sm  border-bottom box-shadow mb-3">
+            <div  class="container-fluid">
+                <a style=" font-weight: bold; color: Red" class="navbar-brand" asp-area="" >Leave Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                       
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">About</a>
+                         </li>
+                        
+                         <li style="list-style: none; " class="nav-item">
+                        <div class="dropdown">
+                            <button  class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Manage Leave
+                            </button>
+                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="nav-link text-dark dropdown-item" asp-controller="LeaveManagement" asp-action="ToApply" >Apply</a></li>
+                             <li><a class="nav-link text-dark dropdown-item" asp-controller="LeaveManagement" asp-action="ToviewE" >View </a></li>
+
+  </ul>
+                        </div>
+                    </li>
+                         
+                    </ul>
+                </div>
+            </div>
+                     <p class="text-black">@context.HttpContext.Session.GetString("Name")           Login Time:  @context.HttpContext.Request.Cookies["LastLogin"].ToString()</p>
+                      <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">LogOut</a>
+                    
+                     @* <h4 style="text-decoration: none;" > @Html.ActionLink("LogOut", "Index", "Home", routeValues: new {returnUrl = "Url"},null)  @* to exclude html attribute *@
+                    @*  <a href="/Home/Index?returnUrl=Url"></a></h4>
+                             *@
+                         
+        </nav>
+    </header>
+     <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   <footer style="float: bottom: 2px;background-color: blueviolet;">
+        <div   class="row">
+           
+             @* <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+       
+        <div class="column"> &copy; 2023 - Leave Management System </div>
+  <div class="column"> Location:Chennai</div>
+  <div class="column">Contact:+98867 93525</div>
+   @* <i style='font-size:24px' class='fas'>&#xf3c5;</i>
+   <i style='font-size:24px' class='fas'>&#xf095;</i> *@
+</div>
+      
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false) 
+</body>
+</html>
+<style>
+   footer {
+  padding-right:40px;
+  position: absolute;
+  bottom: 1px; 
+  background-color: blueviolet;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 40px;
+  border-top: 1px solid black;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navbar{
+  background-color: blueviolet;
+}
+
+</style>

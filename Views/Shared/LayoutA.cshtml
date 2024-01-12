@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Leave Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LMS.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a style=" font-weight: bold; color: Red" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Leave Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                          <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="">About</a>
+                         </li>
+                            <li style="list-style: none; " class="nav-item">
+                            <div class="dropdown">
+                            <button  class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                               Manage Leave
+                            </button>
+                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><a class=" nav-link text-dark dropdown-item" asp-controller="LeaveManagement" asp-action="ToViewA" >Requested Leave</a>
+                                  </li>
+                              </ul>
+                           </div>
+                        </li>
+
+                        <li style="list-style: none; " class="nav-item">
+                            <div class="dropdown">
+                          <button  class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Manage Employee
+                          </button>
+                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="nav-link text-dark dropdown-item" asp-controller="EmployeeManagement" asp-action="Create" >Add Employee</a></li>
+                            <li><a class=" nav-link text-dark dropdown-item" asp-controller="EmployeeManagement" asp-action="Index" >View Employees</a></li>
+                             </ul>
+                            </div>
+                        </li>
+                         
+                    </ul>
+                </div>
+            </div>
+                       
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">LogOut</a>
+                         
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer  class=" border-top footer ">
+        <div class="container">
+            &copy; 2023 - LMS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+        
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+<style>
+   footer {
+  padding-right:40px;
+  position: absolute;
+  bottom: 1px;
+  background-color: blueviolet;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 40px;
+  border-top: 1px solid black;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navbar{
+  background-color: blueviolet;
+}
+</style>

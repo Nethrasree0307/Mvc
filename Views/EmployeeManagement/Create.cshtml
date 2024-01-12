@@ -1,0 +1,55 @@
+@inject IHttpContextAccessor context;
+@model LMS.Models.Employee
+@{
+    Layout = "LayoutA";
+} 
+<script src="~/Scripts/jquery-3.4.1.js"></script> @* for client side validation javacripts are used*@
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+ <body>
+ <div class="container login-container" style="padding-left: 250px;">
+       <form method="post" class="row g-3">
+                       <center>     <h3 style="color: rgb(74, 19, 125);">ADD EMPLOYEE</h3></center>
+                          <div class="col-md-6">
+                             @Html.LabelFor(m => m.Name)
+                             @Html.TextBoxFor(m => m.Name, "", new { @class = "form-control", @placeholder = "Enter Name" })
+                             @Html.ValidationMessageFor(m => m.Name,"", new { @class = "text-danger"})
+                          </div>
+                          <div class="col-md-6">
+                             @Html.LabelFor(m => m.Age)
+                             <input type="number" asp-for="Age" class="form-control " placeholder="Enter Age" tabindex="2">
+                             @Html.ValidationMessageFor(m => m.Age,"", new { @class = "text-danger"})
+                          </div>
+                          <div class="col-md-6">
+                             @Html.LabelFor(m => m.EmailId)
+                             <input type="text" asp-for="EmailId" class="form-control required" placeholder="Enter EmailId" tabindex="3">
+                             @Html.ValidationMessageFor(m => m.EmailId,"", new { @class = "text-danger"})
+                          </div>
+                         <div class="col-md-6">
+                             @Html.LabelFor(m => m.Address)
+                             <input type="text" asp-for="Address" class="form-control required" placeholder="Enter Address" tabindex="4">
+                             @Html.ValidationMessageFor(m => m.Address,"", new { @class = "text-danger"})
+                          </div>
+                          <div class="col-md-6">
+                             @Html.LabelFor(m => m.password)
+                             <input type="text" asp-for="password" class="form-control required" placeholder="Enter Password" tabindex="5">
+                             @Html.ValidationMessageFor(m => m.password,"", new { @class = "text-danger"})
+                         </div>
+                          <div class="col-md-6">
+                             @Html.LabelFor(m => m.contact)
+                             <input type="text" asp-for="contact" class="form-control required" placeholder="Enter Contact Number" tabindex="6">
+                             @Html.ValidationMessageFor(m => m.contact,"", new { @class = "text-danger"})
+                          </div>
+                          <div>
+                             @Html.ValidationSummary(false, "", new { @class = "alert-danger"})@*false :  field errors as list and controller error ,True:  any error in controller,"" to give any statement default*@
+                          </div>
+                           <div class="col-12">
+                            <center>
+                            <button style="background-color: rgb(74, 19, 125);color: rgb(187, 137, 233);" class="btn btn-blueviolet" type="submit">Create</button>
+                            <a style="background-color: rgb(157, 65, 243);color: rgb(19, 11, 26);" class="btn btn-blueviolet" asp-action="AdminIndex" asp-controller="Login" class="btn btn-secondary">Cancel</a>
+                            </center>
+                          </div>  
+              </form>
+          </div>
+ </body>
+     

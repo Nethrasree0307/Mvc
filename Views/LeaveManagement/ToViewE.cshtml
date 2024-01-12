@@ -1,0 +1,46 @@
+@model List<LMS.Models.Leave> 
+ @{
+    Layout = "LayoutE";
+} 
+  
+    <body> 
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr style="font-weight: bolder;" >
+                      <td>EmployeeID</td>   
+                        <td>Name</td>
+                        <td>LeaveType</td>
+                        <td>Start Date</td>
+                        <td>End Date</td>
+                        <td>Description</td>
+                        <td>Status</td>
+                        
+                   </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                             <td>@item.EmployeeID</td>   
+                             <td>@item.Name</td> 
+                             <td>@item.LeaveType</td> 
+                              <td>@item.StartDate.Value.ToShortDateString()</td> 
+                               <td>@item.EndDate.Value.ToShortDateString()</td> 
+                                <td>@item.Description</td> 
+                                <td>@item.AcceptOrReject</td>
+                                 <td>
+                                  @* @Html.ActionLink("Approve","Approve",new {id = item.EmployeeID})| *@
+                                  @* <a style="color: green;" asp-action="View1" asp-controller="LeaveManagement" asp-route-id="@item.EmployeeID"><i style="font-size:18px;color: rgb(0, 128, 2);" class="fa">&#xf046;</i></a> *@
+                                  @* <a  style="color: rgb(128, 17, 0);" asp-action="ToViewA" asp-controller="LeaveManagement" asp-route-id="@item.EmployeeID" >Delete</a>  *@
+                                  @* <a  asp-action="Delete" asp-controller="LeaveManagement" asp-route-id="@item.EmployeeID"><i style="font-size:18px;color: rgb(128, 17, 0);" class="glyphicon">&#xe020;</i></a> *@
+                                  @* @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID }, new { @class = "glyphicon glyphicon-trash" }) *@
+                                 </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+</body>
+    

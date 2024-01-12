@@ -1,0 +1,153 @@
+﻿
+@model LMS.Models.Logindetail
+@{
+    ViewData["Title"] = "Login ";
+
+ }
+ <style>
+      .btn.btn-primary.dropdown-toggle {
+        display: inline-block;
+        background-color: #7b38d8;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #ffffff;
+        text-align: center;
+        font-size: 20px;
+        padding: 10px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 0px;
+        ali
+      }
+      .btn.btn-primary.dropdown-toggle span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      .btn.btn-primary.dropdown-toggle span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      .btn.btn-primary.dropdown-toggle:hover {
+        background-color: #7b38d8;
+      }
+      .btn.btn-primary.dropdown-toggle:hover span {
+        padding-right: 25px;
+      }
+      .btn.btn-primary.dropdown-toggle:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      .dropdown{
+        
+        justify-content:left;
+        position:absolute;
+        top:30px;
+        right:30px;
+
+      }
+      h3{
+        font-weight: 2px;
+        font-family: 'Times New Roman', Times, serif;
+        color: red;
+        text-transform: uppercase;
+        }
+        
+.display-4
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #633fb8 0%,
+    #633fb8 10%,
+    #633fb8 37%,
+    #633fb8 50%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 100px;
+}
+.dropdown-item{
+  background-color: #7b38d8;
+  color: #f7c2f9;
+  font-style: italic;
+  font-weight: 2px;
+  border-color: black;
+  border-style: groove;
+}
+.dropdown-item:hover{
+  background-color: black;
+  color: #f7c2f9;
+  font-style: italic;
+  font-weight: 2px;
+}
+h1{
+  padding : 200px;
+    color: black;
+  font-weight: bolder;
+  font-style: oblique;
+}
+
+
+    </style>
+                         
+<html>
+  
+   <div class="text-center">
+        <h3 class="display-4"><strong>Leave Management</strong></h3>
+      
+      <li style="list-style: none; " class="nav-item">
+      <button style="padding-down:2px;" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+       Login
+      </button>
+   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" asp-controller="Login" asp-action="login" >Login</a></li>
+    @* <li><a class="dropdown-item" asp-controller="Login" asp-action="employeelogin">Employee</a></li> *@
+  </ul>
+</li>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+
+    
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="~/image/employee6.jpg" class="d-block w-100" alt="..." width="500" height="500"><div class="carousel-caption">
+     <center><h1 style="color: #161517;">WELCOME</h1></center> 
+    </div></div>
+    <div class="carousel-item">
+      <img src="~/image/employee4.png" class="d-block w-100" alt="..." width="500" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="~/image/emplms.png" class="d-block w-100" alt="..." width="500" height="500">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</html>

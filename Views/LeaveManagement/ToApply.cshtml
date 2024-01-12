@@ -1,0 +1,93 @@
+@inject IHttpContextAccessor context;
+@model LMS.Models.Leave
+@{
+  
+    Layout = "LayoutE";
+} <script src="~/scripts/jquery-1.10.2.min.js"></script> 
+<script src="~/scripts/jquery-ui-1.12.1.min.js"></script>
+ <link href="/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    
+       
+    <div class="container login-container" style="padding-left: 250px;">
+        
+             
+                <form method="post" class="row g-3">
+             <div >
+                     <h3 style="color: rgb(74, 19, 125);padding-left: 250px">APPLY LEAVE</h3> 
+
+                    </div>
+                      
+                         <div class="col-md-4"> 
+                             <label>EmployeeID:</label>
+                            <input type="text" asp-for="EmployeeID" value="" class="form-control required"  placeholder="Enter Employee Id" tabindex="1">
+                             @Html.ValidationMessageFor(m => m.EmployeeID, "", new { @class = "text-danger"})
+                        </div> 
+                         <div class="col-md-4">
+						     <label>Name :</label>
+                            <input type="text" asp-for="Name" value='@context.HttpContext.Session.GetString("Name")' class="form-control required" placeholder="Enter Name" tabindex="2" readonly >
+                            
+                        </div>
+                       
+                  <div class="col-10">
+            <label >Leave Type : </label>
+
+            <select class="col-md-6" name="LeaveType" id="LeaveType">
+             <option value="">Choose leave type</option>
+            <option value="Sick Leave">Sick Leave</option>
+            <option value="Personal Leave">Personal Leave</option>
+            <option value="Maternity Leave">Maternity Leave</option>
+            <option value="Other Leave">Other Leave</option>
+            </select>
+             @Html.ValidationMessageFor(m => m.LeaveType,"", new { @class = "text-danger"})
+        <br>
+        </div>  
+       <div class="col-md-4">
+                            <label>StartDate:</label>
+                            
+                            <input type="date"  asp-for="StartDate" class="form-control required" placeholder="Enter Start date" tabindex="5">
+                            @* <input type="date" asp-for="StartDate" class="form-control required" placeholder="Enter start date" tabindex="4"> *@
+                             @Html.ValidationMessageFor(m => m.StartDate,"", new { @class = "text-danger"})
+                        </div>
+
+                         <div class="col-md-4">
+                             <label>EndDate: </label>
+
+                             <input type="date"  asp-for="EndDate" class="form-control required" placeholder="Enter End date" tabindex="5">
+                               @Html.ValidationMessageFor(m => m.EndDate,"", new { @class = "text-danger"})
+                        </div>
+                         
+                         
+                         <div class="col-8">
+                            <label>Description:</label>
+                            <input type="text" asp-for="Description" class="form-control required" placeholder="Enter Description" tabindex="6">
+                             @Html.ValidationMessageFor(m => m.Description,"", new { @class = "text-danger"})
+                        </div><br>
+                        <div class="col-10">
+                          <label>Status : </label>
+                            <select class="col-md-6" name="AcceptOrReject" id="AcceptOrReject" >
+                             <option value="">Select Status </option>
+                            <option  value="pending">Pending..</option>
+                            </select>
+                         @Html.ValidationMessageFor(m => m.AcceptOrReject,"", new { @class = "text-danger"})
+
+                            </div>
+                        
+
+                        
+                   <div class="col-8">
+                            <center>
+                        <button style="background-color: rgb(74, 19, 125);color: rgb(187, 137, 233);" class="btn btn-blueviolet" class="btn btn-primary" type="submit">Apply Now</button>
+                        <a style="background-color: rgb(157, 65, 243);color: rgb(19, 11, 26);"  asp-action="#" asp-controller="EmployeeManagement" class="btn btn-secondary">Cancel</a>
+                            </center>
+                    </div>   
+         
+				                        </form>
+                          </div>
+                          @* </div > *@
+                    
+      <script type="text/javascript">
+    
+		</script>
+ 
+
+     
