@@ -8682,11 +8682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nethrasree.logu\\Desktop\\dotnet\\LMS\\LMS.csproj",
+      "projectUniqueName": "D:\\dotnet\\LMS\\LMS.csproj",
       "projectName": "LMS",
-      "projectPath": "C:\\Users\\nethrasree.logu\\Desktop\\dotnet\\LMS\\LMS.csproj",
+      "projectPath": "D:\\dotnet\\LMS\\LMS.csproj",
       "packagesPath": "C:\\Users\\nethrasree.logu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nethrasree.logu\\Desktop\\dotnet\\LMS\\obj\\",
+      "outputPath": "D:\\dotnet\\LMS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nethrasree.logu\\AppData\\Roaming\\NuGet\\NuGet.Config"

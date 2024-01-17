@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JNHmAPD8wdy25gh787K0qSMAg4+2gCaOQU+ZS7A0Dm/SB7deFnGKy3wNFLylG0s/cs5+E2Yufjl395n1U5H/+A==",
+  "dgSpecHash": "qB6oHGD6ji2uNrVCS0T6ZMLDG1Qcmwr/W1QF3sdIVvkG9iX/SEgiD7ZeazDYdFVwCwymhQQZebIemVhc6UxVaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nethrasree.logu\\Desktop\\dotnet\\LMS\\LMS.csproj",
+  "projectFilePath": "D:\\dotnet\\LMS\\LMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nethrasree.logu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\nethrasree.logu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
